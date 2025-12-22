@@ -7,6 +7,6 @@ array-based =
     look up in your browser: what and how does a java array work
     each slot goes to a specific number/index and 
     is zero-based: 
-        slot 1 is slot 0
-        slot 2 is slot 1
+        slot 1 is actually slot 0
+        slot 2 is actually slot 1
         and so on...
