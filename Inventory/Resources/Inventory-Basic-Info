@@ -5,8 +5,8 @@ slot = each square box that a item can go in.
 row = 9 slots per row & the row limit in a GUI is 6 (9*6 = 54 slots)
 array-based = 
     look up in your browser: what and how does a java array work
-    each slot goes to specific number/index and 
-    it's zero-based: 
+    each slot goes to a specific number/index and 
+    is zero-based: 
         slot 1 is slot 0
         slot 2 is slot 1
         and so on...
