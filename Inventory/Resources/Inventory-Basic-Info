@@ -1,0 +1,12 @@
+Inventory Information
+all inventory types = https://github.com/manymade/Skript-2025-Present/blob/main/Inventory/Resources/Inventory%20Types
+
+slot = each square box that a item can go in.
+row = 9 slots per row & the row limit in a GUI is 6 (9*6 = 54 slots)
+array-based = 
+    look up in your browser: what and how does a java array work
+    each slot goes to specific number/index and 
+    it's zero-based: 
+        slot 1 is slot 0
+        slot 2 is slot 1
+        and so on...
