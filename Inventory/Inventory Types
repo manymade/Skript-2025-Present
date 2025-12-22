@@ -1,0 +1,36 @@
+MC version = 1.21.11
+
+There's 27 different types of MC inventories.
+Some of them don't even open GUI's
+
+
+player
+creative
+chest 
+barrel
+shulker
+anvil
+loom
+blast furnace
+dropper
+shelf / book shelf
+chiseled bookshelf
+smithing
+grindstone
+beacon
+workbench / crafting
+dispenser
+stonecutter
+enchanting table
+brewing stand
+composter
+smoker
+cartography
+jukebox
+lectern
+merchant
+ender chest
+upgrade gear / upgrade gear table
+
+
+source: https://skripthub.net/docs/?id=2151
