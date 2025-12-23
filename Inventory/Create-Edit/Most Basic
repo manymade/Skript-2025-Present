@@ -4,4 +4,6 @@ command /inventory-test:
 
 function inv(p: player):
     set {_inv} to chest inventory with 1 row 
+    set slot integers between 0 and 8 to dirt
+
     open {_inv} to {_p}
