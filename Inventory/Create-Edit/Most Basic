@@ -1,6 +1,6 @@
 # skript 2.13.2 = true
 # addons = none
-# the above is information, script doesn't require it
+# the above information is comments
 
 
 command /inventory-test:
