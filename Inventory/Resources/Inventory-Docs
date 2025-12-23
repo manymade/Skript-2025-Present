@@ -1,0 +1,33 @@
+Docs = 
+    knowing how to read docs is significant.
+    sources:
+        https://skripthub.net/docs/
+        https://docs.skriptlang.org
+
+    syntax types:
+        expression
+        effect
+        event
+
+    syntax:
+        # chest inventory expression 
+        # returns a inventory
+        [a] [new] chest inventory (named|with name) %string% [with %number% row[s]]
+        [a] [new] chest inventory with %number% row[s] [(named|with name) %string%]
+
+
+        # inventory slot expression 
+        # returns a slot
+        [the] slot[s] %numbers% of %inventory%
+        %inventory%'[s] slot[s] %numbers%
+        
+
+        # on inventory click event 
+        # a cursor clicked on a slot, it sends through this event
+        [on] [player] inventory(-| )click[ing] [[at] %itemtypes%]
+
+
+        # open/close inventory effect 
+        (open|show) (((crafting [table]|workbench)|chest|anvil|hopper|dropper|dispenser) (view|window|inventory|)|%inventory/inventorytype%) (to|for) %players%
+        close [the] inventory [view] (to|of|for) %players% 
+        close %players%'[s] inventory [view] 
