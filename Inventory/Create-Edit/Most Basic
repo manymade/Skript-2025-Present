@@ -1,0 +1,7 @@
+command /inventory-test:
+    trigger:
+        inv(player)
+
+function inv(p: player):
+    set {_inv} to chest inventory with 1 row 
+    open {_inv} to {_p}
