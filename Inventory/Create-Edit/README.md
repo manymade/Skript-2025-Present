@@ -1,5 +1,6 @@
 ### Inventory Information
-The information is taken from Skript.<br>
+Gives information on what and how inventories are.<br>
+
 ```
 https://github.com/manymade/Skript-2025-Present/tree/main/Inventory/Resources
 ```
