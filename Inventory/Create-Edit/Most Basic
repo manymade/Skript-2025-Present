@@ -3,7 +3,7 @@
 # the above information is comments
 
 
-command /inventory-test:
+command /givedirt:
     trigger:
         inv(player)
 
