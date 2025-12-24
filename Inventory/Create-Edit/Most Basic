@@ -8,7 +8,8 @@ command /givedirt:
         inv(player)
 
 function inv(p: player):
+    # creates the inventory and assigns it to variable
     set {_inv} to chest inventory with 1 row 
-    set slot integers between 0 and 8 to dirt
+    set slot integers between 0 and 8 of {_inv} to dirt
 
     open {_inv} to {_p}
