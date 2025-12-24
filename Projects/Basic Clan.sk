@@ -1,0 +1,104 @@
+# this is a incomplete clan script
+# only: creates & disbands 
+
+# proper clan script
+# has: create & disband, invite system, join, leave, kick, clan chat, teammate identifier, 
+# and a way to see basic information of the clan
+
+
+command /clan [<text>] [<text>]:
+    trigger:
+        # clan creation
+        if all:
+            # is arguments setup
+            arg-1 = "create"
+            arg-2 is set
+
+            # valid?
+            clans() doesn't contain arg-2
+            correct_format(arg-2) = true 
+            clan_in(player) = false
+        then:
+            set {_state} to clan_add(arg-2)
+            if {_state} = true:
+                clan_add_to(arg-2, player)
+                message "Clan %arg-2% created."
+            
+            else if {_state} = false:
+                message "Clan exists."
+
+
+        # clan disband
+        if all:
+            # is arguments setup
+            arg-1 = "disband"
+            arg-2 is set
+
+            # valid?
+            clans() contains arg-2
+            clan_creator(arg-2, player) = true
+        then:
+            set {_state} to clan_remove(arg-2)
+            if {_state} = true:
+                delete {inclan::%player%}
+                message "Clan disband & removed."
+            
+            else if {_state} = false:
+                message "Clan doesn't exist."
+
+
+
+# clan side
+local function clans() :: texts:
+    return {clan::*}
+
+local function clan_add(newclan: text) :: boolean:
+    if clans() doesn't contain {_newclan}:
+        add {_newclan} to {clan::*}
+        return true
+    return false
+
+local function clan_remove(clan: text) :: boolean:
+    if clans() contains {_clan}:
+        delete {clan::%{_clan}%::*}
+        remove {_clan} from {clan::*}
+        return true
+    return false
+
+local function clan_add_to(targetclan: text, target: player):  
+    if {clan::%{_targetclan}%::creator} is not set:
+        set {clan::%{_targetclan}%::creator} to {_target}
+
+    add {_target} to {clan::%{_targetclan}%::l::*}
+    set {inclan::%{_target}%} to {_targetclan}
+
+local function clan_remove_from(targetclan: text, target: player):
+    remove {_target} from {clan::%{_targetclan}%::l::*}
+    delete {inclan::%{_target}%}
+
+local function clan_creator(clan: text, target: player) :: boolean:
+    if {clan::%{_clan}%::creator} = {_target}:
+        return true 
+    return false
+
+local function clan_list() :: players:
+    return {clan::%{_targetclan}%::l::*}
+
+
+
+# player side
+local function clan_in(target: player) :: boolean:
+    if {inclan::%{_target}%} is set:
+        return true 
+    return false
+
+
+
+# regex text check
+# work in progress
+local function correct_format(clan: text) :: boolean:
+    if {_clan} matches "\d[A-Za-z]+" or "[0-9]":
+        return false
+    if length of {_clan} > 8:
+        return false
+    return true
